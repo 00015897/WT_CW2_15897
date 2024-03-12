@@ -1,0 +1,37 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Order Coffee
+  link(rel='stylesheet' href='/css/layout.css')
+.navbar
+  p
+    | This web application was created to fulfill Web Technology module's requirements and does not represent an actual company or service
+  button#deleteOrderBtn
+        a(href="/orders") Delete Order
+  button#seeMyOrderBtn 
+    a(href="/orders")  See My Order
+.container
+  h1 Coffee Order Form
+  form#coffeeForm.form
+    .form-group
+      label(for='userName') Your Name
+      input#userName.form-control(type='text' placeholder='Enter your name' required='')
+    .form-group
+      label(for='phoneNumber') Phone Number
+      input#phoneNumber.form-control(type='tel' placeholder='Enter your phone number' required='')
+    .form-group
+      label(for='coffeeType') Coffee Type
+      select#coffeeType.form-control(required='')
+        option(value='' selected='' disabled='')
+          | Select your coffee
+        option(value='Espresso') Espresso
+        option(value='Latte') Latte
+        option(value='Cappuccino') Cappuccino
+        option(value='Mocha') Mocha
+        option(value='Americano') Americano
+        option(value='Doppio') Doppio
+    .form-group
+      label(for='quantity') Quantity
+      input#quantity.form-control(type='number' placeholder='Enter quantity' min='1' max='20' required='')
+    button.btn(type='submit') Place Order

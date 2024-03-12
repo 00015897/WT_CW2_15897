@@ -1,0 +1,31 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Coffee Orders
+  link(rel='stylesheet' href='/css/all_orders.css')
+.navbar
+  p
+    | This web application was created to fulfill Web Technology module's requirements and does not represent an actual company or service
+  button#newOrderBtn 
+    a(href="/order-coffee") Order coffee
+.container
+  h1 Coffee Orders
+  table
+    thead
+      tr
+        th User Name
+        th Phone Number
+        th Coffee Type
+        th Quantity
+    tbody
+      tr
+        td Mark
+        td 90-123-45-67
+        td Latte
+        td 2
+      tr
+        td Anya
+        td 90-123-45-67
+        td Espresso
+        td 1
