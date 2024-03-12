@@ -11,21 +11,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/css", express.static("public/css"));
 app.use("/JavaScript", express.static("public/JavaScript"));
+global.ordersDB = path.join(__dirname, "./ordersDB.json");
 
-// const api_route = require("./routes/api");
-// const web_route = require("./routes/web");
+const web_route = require("./routes/web/script");
+app.use("/", web_route);
 
-// app.use("/api", api_route);
-// app.use("/", web_route);
-
-app.get("/order-coffee", (req, res) => {
-    res.render("layout.pug");
-});
+const api_route = require("./routes/api/script");
+app.use("/api", api_route);
 
 app.get("/orders", (req, res) => {
     res.render("all_orders.pug");
 });
-
-global.ordersDB = path.join(__dirname, "./ordersDB.json");
 
 app.listen(3000, () => console.log("Server is working"));
