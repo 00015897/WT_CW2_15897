@@ -1,5 +1,5 @@
 const fs = require("fs");
-const path = require("path")
+const path = require("path");
 const ordersFilePath = path.resolve(__dirname, "../ordersDB.json");
 const ordersJSON = fs.readFileSync(ordersFilePath, "utf8");
 
@@ -28,6 +28,19 @@ const service = {
             id: userID,
             order: order,
         };
+    },
+    update(req, res) {
+        const body = req.body;
+        const order_number = ordersDB.findIndex((order) => order.id == req.params.id);
+        if (order_number !== -1) {
+            ordersDB[order_number].order = {
+                ...ordersDB[order_number].order,
+                ...body,
+            };
+            writeToFile(ordersDB);
+            return ordersDB[order_number];
+        }
+        return null;
     },
 };
 function generateUniqueId() {

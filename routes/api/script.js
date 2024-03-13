@@ -10,5 +10,12 @@ router.post('/order-coffee', (req, res) => {
     }
     controller.register(req, res);
 });
+router.post('/order-update/:id', (req, res) => {
+    let errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400)
+    }
+    controller.update(req, res);
+});
 
 module.exports = router;

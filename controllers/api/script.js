@@ -8,5 +8,13 @@ let controller = {
             res.status(500);
         }
     },
+    update: async (req, res) => {
+        try {
+            const order = await service.update(req);
+            res.json(order);
+        } catch (error) {
+            res.status(500)
+        }
+    }
 };
 module.exports = controller
