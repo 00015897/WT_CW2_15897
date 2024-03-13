@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const coffeeForm = document.getElementById("coffeeForm");
     const order_id = coffeeForm.getAttribute("order_id")
-    console.log(order_id);
     coffeeForm.addEventListener("submit", function (e) {
         e.preventDefault();
         const userName = document.getElementById("userName").value;

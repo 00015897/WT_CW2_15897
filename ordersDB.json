@@ -1,38 +1,20 @@
 [
     {
-        "id": "u14zmsn72ltphu42w",
+        "id": "0s3cd2hjlltpjv3ya",
         "order": {
-            "userName": "Shaxzoda",
+            "userName": "Malika",
             "phoneNumber": "998901114455",
             "coffeeType": "Espresso",
-            "quantity": "5"
-        }
-    },
-    {
-        "id": "urbyglxtmltp86i7l",
-        "order": {
-            "userName": "Ozoda",
-            "phoneNumber": "998901114466",
-            "coffeeType": "Latte",
             "quantity": "4"
         }
     },
     {
-        "id": "pocgt407nltod15a1",
+        "id": "qu5nqzqrzltpjuum5",
         "order": {
             "userName": "Rayhona",
             "phoneNumber": "998901114455",
-            "coffeeType": "Americano",
-            "quantity": "1"
-        }
-    },
-    {
-        "id": "wq2hdud4yltod05ml",
-        "order": {
-            "userName": "Malika",
-            "phoneNumber": "998901114455",
-            "coffeeType": "Latte",
-            "quantity": "3"
+            "coffeeType": "Espresso",
+            "quantity": "2"
         }
     }
 ]
