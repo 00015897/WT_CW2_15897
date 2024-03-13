@@ -18,14 +18,14 @@ head
         th Phone Number
         th Coffee Type
         th Quantity
+        th Actions
     tbody
-      tr
-        td Mark
-        td 90-123-45-67
-        td Latte
-        td 2
-      tr
-        td Anya
-        td 90-123-45-67
-        td Espresso
-        td 1
+      each order in orders
+        tr
+          td #{order.order.userName}
+          td #{order.order.phoneNumber}
+          td #{order.order.coffeeType}
+          td #{order.order.quantity}
+          td
+            a(href="" style="margin-right:15px; color: #205B34; font-weight: bold;") Edit
+            a(href="" style="color: #922724; font-weight: bold;") Delete

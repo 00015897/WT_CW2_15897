@@ -1,9 +1,12 @@
 const fs = require("fs");
-const orderDB = require(global.ordersDB);
+const path = require("path")
+const ordersFilePath = path.resolve(__dirname, "../ordersDB.json");
+const ordersJSON = fs.readFileSync(ordersFilePath, "utf8");
 
+const ordersDB = JSON.parse(ordersJSON);
 const service = {
-    get(req, res) {
-        return orderDB;
+    get_orders(req, res) {
+        return ordersDB;
     },
     create(req, res) {
         const userID = generateUniqueId();
@@ -15,11 +18,11 @@ const service = {
             coffeeType: body.coffeeType,
             quantity: body.quantity,
         };
-        orderDB.unshift({
+        ordersDB.unshift({
             id: userID,
             order: order,
         });
-        writeToFile(orderDB);
+        writeToFile(ordersDB);
 
         return {
             id: userID,
@@ -34,10 +37,10 @@ function generateUniqueId() {
     return uniqueId;
 }
 
-let writeToFile = async (orderDB) => {
+let writeToFile = async (ordersDB) => {
     await fs.writeFileSync(
         global.ordersDB,
-        JSON.stringify(orderDB, null, 4),
+        JSON.stringify(ordersDB, null, 4),
         "utf8"
     );
 };

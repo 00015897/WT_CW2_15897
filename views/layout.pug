@@ -8,9 +8,9 @@ head
   p
     | This web application was created to fulfill Web Technology module's requirements and does not represent an actual company or service
   button#deleteOrderBtn
-        a(href="/orders") Delete Order
+        a(href="/all-orders") Delete Order
   button#seeMyOrderBtn 
-    a(href="/orders")  See My Order
+    a(href="/all-orders")  See My Order
 .container
   h1 Coffee Order Form
   form#coffeeForm.form(action="/api/order-coffee" method="POST")

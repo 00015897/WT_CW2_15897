@@ -19,8 +19,4 @@ app.use("/", web_route);
 const api_route = require("./routes/api/script");
 app.use("/api", api_route);
 
-app.get("/orders", (req, res) => {
-    res.render("all_orders.pug");
-});
-
 app.listen(3000, () => console.log("Server is working"));
